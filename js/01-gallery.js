@@ -20,7 +20,7 @@ const markup = galleryItems
   )
   .join("");
 
-galleryEl.insertAdjacentHTML("beforeend", markup);
+  galleryEl.insertAdjacentHTML("beforeend", markup);
 
 function showOriginalImgEl(event) {
   event.preventDefault();

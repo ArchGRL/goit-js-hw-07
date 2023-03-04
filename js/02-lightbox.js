@@ -2,8 +2,6 @@ import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 const galleryEl = document.querySelector(".gallery");
 
-galleryEl.addEventListener("click", showOriginalImgEl);
-
 const markup = galleryItems
   .map(
     ({ preview, original, description }) =>
@@ -13,19 +11,9 @@ const markup = galleryItems
   )
   .join("");
 
-galleryEl.insertAdjacentHTML("beforeend", markup);
-
-function showOriginalImgEl(event) {
-  event.preventDefault();
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
+  galleryEl.insertAdjacentHTML("beforeend", markup);
 
   new SimpleLightbox(".gallery a", {
-    captionSelector: "img",
-    captionType: "attr",
     captionsData: "alt",
-    captionPosition: "bottom",
     captionDelay: 250,
   });
-}
